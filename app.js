@@ -7,9 +7,9 @@ async function get(url){
 
 
 //get the list of currencies
-get('http://apilayer.net/api/list?access_key=07681efcccebdce0607eb820f6b00e3d')
+get('https://openexchangerates.org/api/currencies.json?app_id=3f4e150b3eaa4cd0ac6c0ad3be19c1a8')
   .then(data => {
-    const list = data.currencies;
+    const list = data;
     keys = Object.keys(list);
     // create a 'option' element for each list item
     keys.forEach(function(key){
@@ -39,26 +39,26 @@ get('http://apilayer.net/api/list?access_key=07681efcccebdce0607eb820f6b00e3d')
     })
 
     function calculate() {
-      let sourceIndex = document.querySelector('#base-currency').selectedIndex;
+      let baseIndex = document.querySelector('#base-currency').selectedIndex;
 
-      let currenciesIndex = document.querySelector('#converted-currency').selectedIndex;
+      let currencieIndex = document.querySelector('#converted-currency').selectedIndex;
            
-      get(`http://apilayer.net/api/live?access_key=07681efcccebdce0607eb820f6b00e3d&source=${keys[sourceIndex]}`)
+      get(`https://openexchangerates.org/api/latest.json?app_id=3f4e150b3eaa4cd0ac6c0ad3be19c1a8&base=${keys[baseIndex]}`)
         .then(data => {
-          const quotes = data.quotes;
-          const i = keys[sourceIndex] + keys[currenciesIndex];
-          const quotesIndexes = Object.keys(quotes)
-          quotesIndexes.forEach(function(quotesIndex){
-            // console.log(quotesIndex);
-            // console.log(i);
-            if(quotesIndex == i){
-              const value = document.querySelector('#input-bc').value
+          const rates = data.rates;
+          const i = keys[currencieIndex];
+          const ratesIndexes = Object.keys(rates);
 
-              const result = value * quotes[quotesIndex];
+          ratesIndexes.forEach(function(ratesIndex){
+            if (ratesIndex == i){
+              const value = document.querySelector('#input-bc').value;
+              const result = value * rates[ratesIndex];
               
               document.querySelector('#input-cc').value = result.toFixed(2);
             }
-          });
+          })
+
+
         })
         
     }
