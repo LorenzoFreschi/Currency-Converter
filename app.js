@@ -57,10 +57,7 @@ get('https://openexchangerates.org/api/currencies.json?app_id=3f4e150b3eaa4cd0ac
               document.querySelector('#input-cc').value = result.toFixed(2);
             }
           })
-
-
         })
-        
     }
 
     calculate();
@@ -69,7 +66,7 @@ get('https://openexchangerates.org/api/currencies.json?app_id=3f4e150b3eaa4cd0ac
 
     document.querySelector('#base-currency').addEventListener('click', calculate);
 
-    document.querySelector('#converted-currency').addEventListener('click', calculate);
+    document.querySelector('#converted-currency').addEventListener('change', calculate);
   })
 
 
