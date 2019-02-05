@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+  <title>Currency Converter</title>
+</head>
+<body>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro');
+    *{
+      padding:0rem;
+      margin:0rem;
+      box-sizing: border-box;
+    }
+    body {
+      margin-top:20vh;
+      justify-content: center;
+      font-family: 'Source Sans Pro', sans-serif;
+    }
+    .container {
+      max-width: 760px;
+      margin: auto;
+      padding:1rem;
+    }
+    .card {
+      width: 100%;
+      border:2px solid #ccc;
+      border-radius:10px;
+      padding: 2rem;
+      text-align: center;
+      font-weight: bolder;
+    }
+    .card h1 {
+      margin: 2rem;
+      display: inline-block;
+    }
+    .card .input-group {
+      display: flex;
+    }
+    .card input{
+      display:block;
+      margin:auto;
+      width:100%;
+      padding:0.6rem;
+      margin: 1rem 0rem;
+      border-radius: 5px 0px 0px 5px;
+      border: 1px solid #ccc;
+      border-right: 0px;
+    }
+    .card select{
+      display:block;
+      margin:auto;
+      width:60%;
+      padding:0.6rem;
+      margin: 1rem 0rem;
+      border-radius: 0px 5px 5px 0px;
+      border: 1px solid #ccc;
+      border-left: 0px;
+    }
+    .alert {
+      width:100%;
+      background: rgba(255, 165, 0, 0.7);
+      border: 2px solid black;
+      border-radius: 5px;
+      padding: 1rem;
+      text-align: center;
+      margin: 1.5rem 0rem;
+    }
+
+  </style>
+
+
+  <div class="container">
+
+      <div class="alert">
+        <h2>watch out!</h2>
+        <p>you can't convert currencies unless you take the US dollar as a source &nbsp; &nbsp; <i class="far fa-sad-cry fa-2x"></i></p>
+      </div>
+
+    <div class="card">
+        <h1>Currency Converter</h1>
+        <div class="input-group">
+          <input type="number" name="input-bc" id="input-bc">
+          <select name="base-currency" id="base-currency"></select>
+        </div>
+    
+        <div class="input-group">
+          <input type="number" name="input-cc" id="input-cc">
+          <select name="converted-currency" id="converted-currency"></select>
+        </div>
+      </div>
+  </div>
+  <script src="app.js"></script>
+</body>
+</html>
