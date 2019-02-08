@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
   <title>Currency Converter</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
 </head>
 <body>
   <style>
@@ -16,7 +17,6 @@
       box-sizing: border-box;
     }
     body {
-      margin-top:20vh;
       justify-content: center;
       font-family: 'Source Sans Pro', sans-serif;
     }
@@ -60,7 +60,7 @@
       border: 1px solid #ccc;
       border-left: 0px;
     }
-    .alert {
+    .alert, .danger{
       width:100%;
       background: rgba(255, 165, 0, 0.7);
       border: 2px solid black;
@@ -69,11 +69,11 @@
       text-align: center;
       margin: 1.5rem 0rem;
     }
-    @media (max-width:500px){
-      body {
-        margin-top: 10vh;
-      }
+    .danger {
+      background: tomato;
+      border: 2px solid black;
     }
+
 
   </style>
 

@@ -58,13 +58,19 @@ get('https://openexchangerates.org/api/currencies.json?app_id=3f4e150b3eaa4cd0ac
             }
           })
         })
+        .catch(function(){
+          const alert = document.querySelector('.alert');
+          // alert.innerHTML = '';
+          alert.innerHTML = '<h2>Just told you!</h2> <p>the API used have restrictions! <i class="far fa-angry fa-2x"></i></p>';
+          alert.classList.add('danger');
+        })
     }
 
     calculate();
 
     document.querySelector('#input-bc').addEventListener('keydown', calculate);
 
-    document.querySelector('#base-currency').addEventListener('click', calculate);
+    document.querySelector('#base-currency').addEventListener('change', calculate);
 
     document.querySelector('#converted-currency').addEventListener('change', calculate);
   })
